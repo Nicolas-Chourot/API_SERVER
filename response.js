@@ -1,6 +1,6 @@
 module.exports = 
 class Response {
-    constructor (res){
+    constructor (res, url){
         this.res = res;
     }
     status(number){
@@ -20,8 +20,9 @@ class Response {
         this.res.end(JSON.stringify(jsonObj));
     }
     JSON(jsonObj) {
+        let content = JSON.stringify(jsonObj);
         this.res.writeHead(200, {'content-type':'application/json'});
-        this.res.end(JSON.stringify(jsonObj));
+        this.res.end(content);
     }  
     noContent() {
         // no content status

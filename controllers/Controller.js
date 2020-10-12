@@ -10,7 +10,7 @@ const queryString = require('query-string');
 /////////////////////////////////////////////////////////////////////
 module.exports = 
 class Controller {
-    constructor(req, res, authorize = false) {
+    constructor(req, res, authorize = false, cacheActivated = false) {
         this.req = req;
         this.res = res;
         // if true, will require a valid bearer token from request header
